@@ -19,4 +19,5 @@ public class Wallet {
     private Boolean deactivated;
     @Column(name = "user_id")
     private String userId;
+    private String email;
 }

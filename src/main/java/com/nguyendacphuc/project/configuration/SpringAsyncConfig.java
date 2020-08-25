@@ -1,8 +1,10 @@
 package com.nguyendacphuc.project.configuration;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @Configuration
-public class AwsMailConfiguration {
+@EnableAsync
+public class SpringAsyncConfig {
 
 }
