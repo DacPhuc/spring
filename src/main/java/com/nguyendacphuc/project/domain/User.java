@@ -1,6 +1,8 @@
 package com.nguyendacphuc.project.domain;
 
 import lombok.Data;
+import org.springframework.scheduling.annotation.Async;
+
 import javax.persistence.*;
 
 @Entity

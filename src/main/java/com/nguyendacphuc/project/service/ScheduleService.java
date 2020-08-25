@@ -9,13 +9,13 @@ import java.time.format.DateTimeFormatter;
 public class ScheduleService {
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 30000)
     public void scheduleTaskWithFixedRate() {
         System.out.println("Running schedule fix rate");
     }
 
     // Will take 2 second after invocation finish there task
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 20000)
     public void scheduleTaskWithFixedDelay() {}
 
     @Scheduled(cron = "0 * * * * ?")
