@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping(value = "users")
@@ -31,10 +30,6 @@ public class UserController {
     public ResponseEntity<?> getListOfUser() throws InterruptedException, ExecutionException {
         Pageable pageable = PageRequest.of(0, 20);
         Page<User> listUsers = userRepository.findAll(pageable);
-        userService.asyncMethodWithVoidReturnType();
-        Future<String> hello = userService.getTypeFromAsyncFunction();
-        System.out.println("hello dacphucassadasd" +hello.get());
-        System.out.println("Hello nhe");
         HashMap<String, Page<User>> result = new HashMap<>();
         result.put("result", listUsers);
         return new ResponseEntity<>(result, HttpStatus.OK);
