@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class ScheduleService {
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 300000)
     public void scheduleTaskWithFixedRate() {
         System.out.println("Running schedule fix rate");
     }
