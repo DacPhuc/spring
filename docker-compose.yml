@@ -11,3 +11,17 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: dapu
       MYSQL_DATABASE: dapu
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dapu
+      MONGO_INITDB_ROOT_PASSWORD: dapu
+      MONGO_INITDB_DATABASE: dapu_nosql
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
