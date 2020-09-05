@@ -2,6 +2,7 @@ package com.nguyendacphuc.project.domain;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -24,4 +25,6 @@ public class UserProfile {
     private String phoneNumber;
     private String job;
     private String email;
+    @TextIndexed
+    private String about;
 }
