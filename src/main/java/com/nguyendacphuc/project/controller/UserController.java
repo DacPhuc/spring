@@ -2,7 +2,6 @@ package com.nguyendacphuc.project.controller;
 
 import com.nguyendacphuc.project.domain.User;
 import com.nguyendacphuc.project.repository.UserRepository;
-import com.nguyendacphuc.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,11 +21,8 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    UserService userService;
-
     @GetMapping()
-    public ResponseEntity<?> getListOfUser() throws InterruptedException {
+    public ResponseEntity<?> getListOfUser() {
         Pageable pageable = PageRequest.of(0, 20);
         Page<User> listUsers = userRepository.findAll(pageable);
         HashMap<String, Page<User>> result = new HashMap<>();
